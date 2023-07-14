@@ -48,49 +48,5 @@
       <button id="web3-login-button" class="btn btn-primary login-button">Connect Wallet</button>
     </div>
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const web3LoginButton = document.getElementById("web3-login-button");
-      web3LoginButton.addEventListener("click", connectToWallet);
-
-      function connectToWallet() {
-        if (typeof ethereum !== "undefined") {
-          ethereum.request({ method: "eth_chainId" })
-            .then(function(chainId) {
-              if (chainId !== "0x38") {
-                if (confirm("Please switch to the Binance Smart Chain network to connect your wallet. Do you want to switch now?")) {
-                  ethereum.request({
-                    method: "wallet_addEthereumChain",
-                    params: [{
-                      chainId: "0x38",
-                      chainName: "Binance Smart Chain",
-                      rpcUrls: ["https://bsc-dataseed.binance.org/"], // Replace with correct RPC URL for Binance Smart Chain
-                      blockExplorerUrls: ["https://bscscan.com/"] // Replace with correct block explorer URL for Binance Smart Chain
-                    }]
-                  });
-                }
-              } else {
-                ethereum.request({ method: "eth_requestAccounts" })
-                  .then(function(accounts) {
-                    // Wallet connected, redirect to the main page
-                    window.location.href = "main.html";
-                  })
-                  .catch(function(error) {
-                    console.error("Error connecting to the wallet:", error);
-                  });
-              }
-            })
-            .catch(function(error) {
-              console.error("Error getting chain ID:", error);
-            });
-        } else {
-          console.error("Ethereum provider is not available");
-        }
-      }
-    });
-  </script>
 </body>
-
 </html>
