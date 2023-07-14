@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js"></script>
+  
+  <script src="./script.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script>  document.onreadystatechange = function() {
+    const loader = document.getElementById("loader");
+
+    if (document.readyState === "complete") {
+      loader.style.display = "none";
+    } else {
+      loader.style.display = "block";
+    }
+  };
+
+</script>
+</head>
+<body>
+  <div id="loader" class="loader">
+    <div class="spinner"></div>
+  </div>
+  <nav class="top-navbar">
+    <div class="container">
+  
+      <h3 id="header-title">
+        <i class="fas fa-mobile-alt"> </i>
+        <span id="header-title-text">History</span>
+      </h3>
+      <button id="web3-login-button" class="web3-login-button btn">Web3 Login</button>
+      <div class="web3-wallet-address" style="display: none;">
+        <span></span>
+      </div>
+    </div>
+  </nav>
+<div class="container">
+    <div class="card">
+      <p id="">  Referral Earnings </p>
+      <h2 class="balance">1500000 DFN</h2>
+      <p class="usd-value">~ 10 USDT</p>
+      <div class="d-flex justify-content-between">
+        <div class="staked-amount no-margin">
+          <p class="title no-margin">Direct Referrals</p>
+          <p class="value no-margin">12000</p>
+
+        </div>
+        <div class="reward no-margin">
+          <p class="title no-margin">Indirect Referrals</p>
+          <p class="value no-margin">12000</p>
+    
+        </div>
+      </div>
+    </div>
+    <div class="text-center invitation">
+      <p class="mt-3" style="color:#0d6efd">Earn 10% Direct and 5% Indirect Referral Income</p>
+      <a onclick="shareMessage()" class="btn btn-block btn-primary text-white"> Invite Now <i class="fa-solid fa-arrow-up-right-from-square"></i> </i></a>
+    </div>
+    
+    <div class="referrer">
+      <span>Referred By</span>
+      <span id="copy-button" class="float-right ">0x23jb13.....1nj3nj  <i class="fas fa-copy"> </i></span>
+    </div>
+    <div class="text-center mt-2">
+      <i style="color:#14a2b8;" class="fas fa-arrow-down"> </i>
+    </div>
+    <div class="your-account text-center">
+     <span ><strong>Your Account: 0x2313.....1nj3nj </strong></span>
+    </div>
+
+    <div class="text-center mt-2">
+      <p style="color:#14a2b8;" class="no-margin">Referrals</p>
+      <i style="color:#14a2b8;" class="fas fa-arrow-down"> </i>
+      </div>
+
+      <div class="referrer text-center">
+        <a href="referrals.html" class="no-decoration">0x23jb1dasdasd3.....1adasdj3nj  <i class="fa-solid fa-arrow-up-right-from-square"></i> </i></a>
+      </div>
+      <div class="referrer text-center">
+        <a href="referrals.html" class="no-decoration">0x23dasdasjb13.....1ndasdj3nj  <i class="fa-solid fa-arrow-up-right-from-square"></i></i></span>
+      </div>
+      <div class="referrer text-center">
+        <a href="referrals.html" class="no-decoration">0x23jbdasdasd13.....1asdaj3nj  <i class="fa-solid fa-arrow-up-right-from-square"></i> </i></span>
+      </div>
+
+</div>
+<div class="mt-5"></div>
+   
+
+  <div class="bottom-navbar">
+    <ul class="nav">
+        <li class="nav-item" hidden>
+            <a class="nav-link" href="main.html">
+              <i class="fas fa-home"></i>
+              <span>History</span>
+            </a>
+            <div class="menu-content">
+              <!-- Content for Home page goes here -->
+            </div>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="main.html">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <div class="menu-content">
+          <!-- Content for Home page goes here -->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="assets.html">
+          <i class="fas fa-box-open"></i>
+          <span>Assets</span>
+        </a>
+        <div class="menu-content">
+          <!-- Content for Assets page goes here -->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="stake.html">
+          <i class="fas fa-hand-holding-usd"></i>
+          <span>Stake</span>
+        </a>
+        <div class="menu-content">
+          <!-- Content for Stake page goes here -->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="team.html">
+          <i class="fas fa-users"></i>
+          <span>Team</span>
+        </a>
+        <div class="menu-content">
+          <!-- Content for Team page goes here -->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="settings.html">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </a>
+        <div class="menu-content">
+          <!-- Content for Settings page goes here -->
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script>
+
+  const copyButton = document.getElementById("copy-button");
+
+copyButton.addEventListener("click", function() {
+  const textToCopy = "Text to be copied"; // Replace with the text you want to copy
+
+  // Create a temporary input element
+  const tempInput = document.createElement("input");
+  tempInput.value = textToCopy;
+  document.body.appendChild(tempInput);
+
+  // Copy the text from the input element
+  tempInput.select();
+  document.execCommand("copy");
+
+  // Remove the temporary input element
+  document.body.removeChild(tempInput);
+
+  // Display a confirmation message
+  alert("Text copied to clipboard!");
+});
+
+
+  </script>
+
+<script>
+  function shareMessage() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Shared Content',
+        text: 'Check out this awesome content!',
+        url: 'https://example.com'
+      })
+        .then(() => console.log('Shared successfully'))
+        .catch((error) => console.log('Error sharing:', error));
+    } else {
+      alert('Share functionality not supported on this browser');
+    }
+  }
+</script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script></body>
+</html>

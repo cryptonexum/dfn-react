@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- <meta name="viewport" content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" /> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js"></script>
+  <!-- <script src="./script.js"></script> -->
+  <link rel="stylesheet" href="./style.css">
+  <script>  document.onreadystatechange = function() {
+    const loader = document.getElementById("loader");
+
+    if (document.readyState === "complete") {
+      loader.style.display = "none";
+    } else {
+      loader.style.display = "block";
+    }
+  };
+</script>
+
+</head>
+<body>
+
+
+  <div id="loader" class="loader">
+    <div class="spinner"></div>
+  </div>
+  <nav class="top-navbar">
+    <div class="container">
+  
+      <h3 id="header-title">
+        <i class="fas fa-mobile-alt"> </i>
+        <span id="header-title-text">Home</span>
+      </h3>
+      <button id="web3-login-button" class="web3-login-button btn ">Web3 Login</button>
+      <div class="web3-wallet-address" style="display: none;">
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <h4>-Gold Memeber-</h4>
+      <input type="button" value="Connect Wallet" onclick="connect();">
+      <p >  Total Balance </p>
+      <h2 class="balance">1500000 DFN</h2>
+      <p class="usd-value">~ 12000 USD</p>
+      <div class="d-flex justify-content-between">
+        <div class="staked-amount no-margin">
+          <p class="title no-margin">Staked Amount</p>
+          <p class="value no-margin">12000 DFN</p>
+          <p class="usd-value-rewards no-margin">~1200 usd</p>
+        </div>
+        <div class="reward no-margin">
+          <p class="title no-margin">Earned Reward</p>
+          <p class="value no-margin">12000 DFN</p>
+          <p class="usd-value-rewards no-margin">~1200 usd</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mt-3">
+      <div class="col">
+        <a href="https://example.com" class="btn btn-outline-info btn-block">Plans</a>
+      </div>
+      <div class="col">
+        <a href="https://example.org" class="btn btn-outline-info  btn-block ">Promotions</a>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="flex mb-1">
+        <h4 class="section-title">Your Stakes</h4>
+      </div>
+        <table class="table table-striped">
+          <thead class="table-danger">
+            <tr>
+              <th class="table-heading">Date</th>
+              <th class="table-heading">Amount</th>
+              <th class="table-heading">Earning</th>
+              <th class="table-heading">APR</th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            <tr class="table-info">
+              <td>01/01/2022</td>
+              <td>1000 DFN</td>
+              <td>500 DFN</td>
+              <td>10%</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <h4 class="section-title">Your Teams</h4>
+        <table class="table table-striped">
+          <thead class="table-danger">
+            <tr>
+              <th>Referral Type</th>
+              <th>Count</th>
+              <th>Earnings (DFN)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-info">
+              <td><strong>Direct</strong></td>
+              <td>10</td>
+              <td>1000</td>
+            </tr>
+            <tr class="table-primary">
+              <td ><strong>Indirect</strong></td>
+              <td>20</td>
+              <td>2000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  
+
+  <div class="bottom-navbar">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="main.html">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <div class="menu-content">
+          <!-- Content for Home page goes here -->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="assets.html">
+          <i class="fas fa-box-open"></i>
+          <span>Assets</span>
+        </a>
+        <div class="menu-content">
+          <!-- Content for Assets page goes here -->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="stake.html">
+          <i class="fas fa-hand-holding-usd"></i>
+          <span>Stake</span>
+        </a>
+        <div class="menu-content">
+          <!-- Content for Stake page goes here -->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="team.html">
+          <i class="fas fa-users"></i>
+          <span>Team</span>
+        </a>
+        <div class="menu-content">
+          <!-- Content for Team page goes here -->
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="settings.html">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </a>
+        <div class="menu-content">
+          <!-- Content for Settings page goes here -->
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
+  <script>
+  /* To connect using MetaMask */
+  async function connect() {
+   if (window.ethereum) {
+    await window.ethereum.request({ method: "eth_requestAccounts" });
+     window.web3 = new Web3(window.ethereum);
+     const account = web3.eth.accounts;
+     //Get the current MetaMask selected/active wallet
+     const walletAddress = account.givenProvider.selectedAddress;
+     console.log(`Wallet: ${walletAddress}`);
+  
+  } else {
+   console.log("No wallet");
+  
+  }
+}
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
