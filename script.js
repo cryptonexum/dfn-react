@@ -47,7 +47,7 @@ function connectToWallet(address) {
             if (walletAddressContainer) {
               walletAddressContainer.remove(); // Remove the wallet address element and logout button
             }
-            window.location.href = "connect.html";
+            window.location.href = "index.html";
           });
         // Check if wallet address container already exists
         const existingWalletAddressContainer = document.querySelector(".web3-wallet-address");
@@ -105,7 +105,7 @@ function connectToWallet(address) {
     if (accounts.length > 0) {
     connectToWallet(accounts)
     } else {
-      window.location.href = "connect.html";
+      window.location.href = "index.html";
       // Show the login button and hide the wallet address
       web3LoginButton.style.display = "block";
       walletAddressContainer.style.display = "none";
